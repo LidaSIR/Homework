@@ -11,15 +11,18 @@ public class ColorPoint extends Point {
         this.color = color;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ColorPoint) && !super.equals(o)) return false;
+            //if (super.equals(o)) {
+                if(o.getClass() == this.getClass()){
 
-
-        if (o instanceof ColorPoint) {
-            ColorPoint cp = (ColorPoint) o;
-            return super.equals(o) && cp.color.equals(color);
+                if (!(o instanceof ColorPoint)){
+                    return false;
+            }else if(this == o) return true;
         }
-        return true;
+        return false;
     }
 }
